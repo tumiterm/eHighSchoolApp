@@ -1,0 +1,119 @@
+﻿@model IEnumerable<SchoolApp.Models.Address>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressLine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Province)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsSame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalAddressLine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalAddressLine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalProvince)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLine1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLine2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalAddressLine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalAddressLine2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalProvince)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AddressId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AddressId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AddressId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

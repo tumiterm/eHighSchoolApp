@@ -1,0 +1,300 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SchoolApp
+build_property.RootNamespace = SchoolApp
+build_property.ProjectDir = C:\Users\Fortunate\Desktop\High School App\SchoolApp\SchoolApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Fortunate\Desktop\High School App\SchoolApp\SchoolApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Address/AddUserAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc1xBZGRVc2VyQWRkcmVzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Address/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Address/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Address/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Address/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Assessment/AssessmentAttempt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXNzbWVudFxBc3Nlc3NtZW50QXR0ZW1wdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Assessment/AssessmentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXNzbWVudFxBc3Nlc3NtZW50TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Assessment/ScheduleAssessment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXNzbWVudFxTY2hlZHVsZUFzc2Vzc21lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Attachment/AddUserAttachment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0YWNobWVudFxBZGRVc2VyQXR0YWNobWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Attendance/ComputeAttendance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVxDb21wdXRlQXR0ZW5kYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/OnGetUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxPbkdldFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/OnModifyUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxPbk1vZGlmeVVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/OnRegisterUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxPblJlZ2lzdGVyVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/OnSignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxPblNpZ25Jbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/PasswordReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxQYXNzd29yZFJlc2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Auth/VerifyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxWZXJpZnlBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Employee/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Employee/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Employee/RegisterEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUmVnaXN0ZXJFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Global/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2xvYmFsXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Home/LearnerBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMZWFybmVyQm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Home/ParentLandingPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJlbnRMYW5kaW5nUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Home/TeacherLandingPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFjaGVyTGFuZGluZ1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/LearnerCompletion/OnEnrollmentCompletion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lckNvbXBsZXRpb25cT25FbnJvbGxtZW50Q29tcGxldGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Learner/EnrolledLearners.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxFbnJvbGxlZExlYXJuZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Learner/LearnerEnrollment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxMZWFybmVyRW5yb2xsbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Learner/OnLearnerEnrolled.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxPbkxlYXJuZXJFbnJvbGxlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Learner/OnViewLearnerSubjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lclxPblZpZXdMZWFybmVyU3ViamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Meeting/ScheduleMeeting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVldGluZ1xTY2hlZHVsZU1lZXRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Meeting/ViewAllMeeting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVldGluZ1xWaWV3QWxsTWVldGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Message/OnSendMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxPblNlbmRNZXNzYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/ParentNotification/OnSendTeacherMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50Tm90aWZpY2F0aW9uXE9uU2VuZFRlYWNoZXJNZXNzYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/AddLearnerParent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEFkZExlYXJuZXJQYXJlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/OnAddLearnerParent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XE9uQWRkTGVhcm5lclBhcmVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/OnRegisteredParent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XE9uUmVnaXN0ZXJlZFBhcmVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Parent/RegisterLearnerParent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFJlZ2lzdGVyTGVhcm5lclBhcmVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Qualification/AddUserQualification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbGlmaWNhdGlvblxBZGRVc2VyUXVhbGlmaWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Qualification/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbGlmaWNhdGlvblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Qualification/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbGlmaWNhdGlvblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Qualification/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbGlmaWNhdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Qualification/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbGlmaWNhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Quiz/GenerateQuiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxHZW5lcmF0ZVF1aXouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Quiz/GradeQuiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxHcmFkZVF1aXouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Quiz/OnBeginQuiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxPbkJlZ2luUXVpei5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Quiz/OnQuizQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxPblF1aXpRdWVzdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Quiz/QuizQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelxRdWl6UXVlc3Rpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/RSVP/AddRSVP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUlNWUFxBZGRSU1ZQLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/School/RegisterSchool.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Nob29sXFJlZ2lzdGVyU2Nob29sLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Subject/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Subject/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Subject/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Subject/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Subject/SubjectAddition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxTdWJqZWN0QWRkaXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Timetable/CreateTimeTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZXRhYmxlXENyZWF0ZVRpbWVUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Timetable/TimeTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZXRhYmxlXFRpbWVUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/High School App/SchoolApp/SchoolApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-l2kjf5s8rg

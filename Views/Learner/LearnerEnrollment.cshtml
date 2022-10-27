@@ -1,0 +1,469 @@
+﻿@model SchoolApp.Models.Learner
+@using SchoolApp.eNums
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+        border-left: solid 5px darkblue;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .desc, .form-control {
+        border-left: solid 5px darkblue;
+    }
+
+    .card-header, .head {
+        background-color: darkblue;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+</style>
+
+<div class="header1">
+    <div class="alert elHeader mb-1 alert-primary d-flex align-items-center" id="form1" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div class="el">
+            <strong>Learner Biographical Details</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <form asp-action="LearnerEnrollment" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row el">
+            <div class="form-group col-md-4">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4 el">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4 el">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control gender" asp-items="Html.GetEnumSelectList<eGender>()">
+                    <option selected="selected" value="">Select Gender</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-2 el">
+                <label asp-for="IsSaCitizen" class="control-label"></label>
+                <select asp-for="IsSaCitizen" class="form-control citizen" asp-items="Html.GetEnumSelectList<eCitizen>()">
+                    <option selected="selected" value="">Select Option</option>
+                </select>
+                <span asp-validation-for="IsSaCitizen" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-2 el">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4 el">
+                <label asp-for="RSAIDNumber" class="control-label"></label>
+                <input asp-for="RSAIDNumber" class="form-control rsa" />
+                <span asp-validation-for="RSAIDNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4 el">
+                <label asp-for="PassportNumber" class="control-label"></label>
+                <input asp-for="PassportNumber" class="form-control Pass" />
+                <span asp-validation-for="PassportNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-12 el">
+                <label asp-for="Nationality" class="control-label"></label>
+                <select asp-for="Nationality" class="form-control nationality" asp-items="Html.GetEnumSelectList<eNationality>()">
+                    <option selected="selected" value="">Select Nationality</option>
+                </select>
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="header1">
+            <div class="alert el mt-3 mb-1 alert-primary d-flex align-items-center" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px" id="form1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <div class="el">
+                    <strong>Learner School Enrollment Details</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4 el">
+                <label asp-for="Grade" class="control-label"></label>
+                <select asp-for="Grade" class="form-control grade" asp-items="Html.GetEnumSelectList<eGrade>()">
+                    <option selected="selected" value="">Select Grade</option>
+                </select>
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4 el">
+                <label asp-for="IntakeCycle" class="control-label"></label>
+                <select asp-for="IntakeCycle" class="form-control intake" asp-items="Html.GetEnumSelectList<eIntake>()">
+                    <option selected="IntakeCycle" value="">Select Intake Cycle</option>
+                </select>
+                <span asp-validation-for="IntakeCycle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4 el">
+                <label asp-for="LearnerReference" class="control-label"></label>
+                <input asp-for="LearnerReference" class="form-control ref" />
+                <span asp-validation-for="LearnerReference" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="header1">
+            <div class="alert el mt-3 mb-1 alert-primary d-flex align-items-center" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2 addressEL" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <div class="el">
+                    <strong>Learner Address</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-12 el">
+                <label asp-for="AddressType" class="control-label"></label>
+                <select asp-for="AddressType" class="form-control addressType" asp-items="Html.GetEnumSelectList<eAddressType>()">
+                    <option selected="AddressType" value="">Select Address Type</option>
+                </select>
+                <span asp-validation-for="AddressType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3 el">
+                <label asp-for="AddressLine1" class="control-label"></label>
+                <input asp-for="AddressLine1" class="form-control line1" />
+                <span asp-validation-for="AddressLine1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3 el">
+                <label asp-for="AddressLine2" class="control-label"></label>
+                <input asp-for="AddressLine2" class="form-control line2" />
+                <span asp-validation-for="AddressLine2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3 el">
+                <label asp-for="Province" class="control-label"></label>
+                <select asp-for="Province" class="form-control province" asp-items="Html.GetEnumSelectList<eProvince>()">
+                    <option selected="Province" value="">Select Province</option>
+                </select>
+                <span asp-validation-for="Province" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3 el">
+                <label asp-for="Postal" class="control-label"></label>
+                <input asp-for="Postal" type="number" class="form-control" />
+                <span asp-validation-for="Postal" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="header2">
+            <div class="alert cn mt-3 mb-1 alert-primary d-flex align-items-center" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi cn bi-exclamation-triangle-fill flex-shrink-0 me-2 addressEL" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <div class="cn">
+                    <strong>Learner Contact Details</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 cn">
+                <label asp-for="Cellphone" class="control-label"></label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">+27</span>
+                    <input asp-for="Cellphone" class="form-control" placeholder="Cellphone Number" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <div class="form-group col-md-6 cn">
+                <label asp-for="Email" class="control-label"></label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">@@</span>
+                    <input type="text" asp-for="Email" class="form-control" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+
+        <div class="header2">
+            <div class="alert cn mt-3 mb-1 alert-primary d-flex align-items-center" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi cn bi-exclamation-triangle-fill flex-shrink-0 me-2 addressEL" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <div class="cn">
+                    <strong>Disability Section</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 cn">
+                <label asp-for="HasDisability" class="control-label"></label>
+                <select asp-for="HasDisability" class="form-control disabilityOpt" asp-items="Html.GetEnumSelectList<eSelection>()">
+                    <option selected="" value="">Select Disability Option</option>
+                </select>
+                <span asp-validation-for="HasDisability" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6 cn">
+                <label asp-for="Disability" class="control-label"></label>
+                <select asp-for="Disability" class="form-control disability" asp-items="Html.GetEnumSelectList<eDisability>()">
+                    <option selected="" value="">Select Disability</option>
+                </select>
+                <span asp-validation-for="Disability" class="text-danger"></span>
+            </div>
+
+
+        </div>
+        <div class="header2">
+            <div class="alert cn mt-3 mb-1 alert-primary d-flex align-items-center" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi cn bi-exclamation-triangle-fill flex-shrink-0 me-2 addressEL" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <div class="cn">
+                    <strong>Learner Attachments</strong>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 header2">
+                <label asp-for="ReportCard" class="control-label"></label>
+                <input type="file" asp-for="ReportCardFile" class="form-control" />
+                <span asp-validation-for="ReportCard" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6 header2">
+                <label asp-for="IDPassport" class="control-label"></label>
+                <input type="file" asp-for="IDPassportFile" class="form-control " />
+                <span asp-validation-for="IDPassport" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-success save"><i class="fa fa-save"></i> Save</button>
+                <button type="button" class="btn btn-primary next"><i class="fa fa-arrow-right"></i> Next</button>
+                <button type="button" class="btn btn-outline-warning back"><i class="fa fa-arrow-left"></i> Back</button>
+                <button type="reset" class="btn btn-danger  float-end"><i class="fa fa-undo"></i> Reset</button>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+      $('.citizen,.disabilityOpt,.disability,.province').select2();
+
+      $('.gender').select2();
+
+      $('.form2Header').hide();
+
+      $('.grade').select2();
+
+      $('.intake').select2();
+
+      $('.addressType').select2();
+
+      $('.nationality').select2();
+
+      $('.contact').hide();
+
+      $('.back,.header2').hide();
+
+      $('.save').hide();
+
+      $('.cn').hide();
+
+      $('.ref').attr('readonly', 'true');
+
+      $('.ref').css('background-color' , '#06038D');
+
+      $('.line1').attr('readonly', 'true');
+      $('.line2').attr('readonly', 'true');
+      $('.line3').attr('readonly', 'true');
+
+      $('.line1').css('background-color' , '#06038D');
+      $('.line2').css('background-color' , '#06038D');
+      $('.line3').css('background-color' , '#06038D');
+
+     $('.citizen').on('change', function () {
+
+      var selectedItem = $(".citizen").find('option:selected').text();
+
+      if(selectedItem == "Yes"){
+
+         $('.Pass').attr('readonly', 'true');
+
+         $('.Pass').css('background-color' , '#06038D');
+
+         $('.rsa').attr('readonly', false);
+
+         $('.rsa').css('background-color' , '#FFFFFF');
+
+      }else if(selectedItem == "Select Option"){
+
+          $('.Pass').attr('readonly', false);
+
+          $('.Pass').css('background-color' , '#FFFFFF');
+
+          $('.rsa').attr('readonly', false);
+
+          $('.rsa').css('background-color' , '#FFFFFF');
+
+      }else{
+
+          $('.Pass').attr('readonly', false);
+
+          $('.Pass').css('background-color' , '#FFFFFF');
+
+          $('.rsa').attr('readonly', 'true');
+
+          $('.rsa').css('background-color' , '#06038D');
+      }
+     });
+
+      $('.uploadOpt').on('change', function () {
+
+      var selectedItem = $(".uploadOpt").find('option:selected').text();
+
+      if(selectedItem == "Select Upload Option"){
+
+           $('.enrollment').hide();
+           $('.enrollmentAdobe').hide();
+           $('.studNum').hide();
+
+
+      }else if(selectedItem == "Adobe Digital Form"){
+
+            alert("To start with adobe, select 'Continue' below first");
+            $('.enrollment').hide();
+            $('.buttons').hide();
+            $('.enrollmentAdobe').show();
+            $('.studNum').hide();
+
+      }else if(selectedItem == "Normal Upload"){
+
+            $('.enrollment').show();
+            $('.enrollmentAdobe').hide();
+            $('.buttons').show();
+            $('.studNum').show();
+       }
+     });
+
+
+     $('.addressType').on('change', function () {
+
+      var selectedItem = $(".addressType").find('option:selected').text();
+
+      if(selectedItem == "Select Address Type"){
+
+          $('.line1').attr('readonly', 'true');
+          $('.line2').attr('readonly', 'true');
+          $('.line3').attr('readonly', 'true');
+
+          $('.line1').css('background-color' , '#06038D');
+          $('.line2').css('background-color' , '#06038D');
+          $('.line3').css('background-color' , '#06038D');
+
+
+      }else{
+
+
+          $('.line1').attr('readonly', false);
+          $('.line2').attr('readonly', false);
+          $('.line3').attr('readonly', false);
+
+          $('.line1').css('background-color' , '#FFFFFF');
+          $('.line2').css('background-color' , '#FFFFFF');
+          $('.line3').css('background-color' , '#FFFFFF');
+
+      }
+
+     });
+
+     $(".next").click(function(){
+
+       $('.el,.header1').hide();
+       $('.cn,.header2').show();
+       $('.next').hide();
+       $('.back').show();
+       $('.save').show();
+
+
+      });
+
+       $('.back').click(function(){
+
+       $('.el,.header1').show();
+       $('.next').show();
+       $('.back,.header2').hide();
+       $('.cn').hide();
+       $('.save').hide();
+
+      });
+
+    });
+</script>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

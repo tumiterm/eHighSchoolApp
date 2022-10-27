@@ -1,0 +1,157 @@
+﻿@model IEnumerable<SchoolApp.Models.TimeTable>
+
+<style>
+    .card-header {
+        background-color: darkblue;
+    }
+
+    .bod {
+        border-color: black;
+    }
+
+</style>
+<div class="mt-0">
+ <button type="button" class="btn btn-outline-danger float-start mt-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"><i class="fa fa-pen"></i> Quiz</button>
+<button type="button" class="btn btn-warning float-end mt-0 mb-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View My Subjects</button><br />
+</div>
+
+<div class="header1 mb-3">
+
+    <div class="alert mb-1 alert-primary col-md-12 d-flex align-items-center" id="form1" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div class="el">
+            <strong>Learner Dashboard</strong><br />
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-6 bod">
+        <div class="card mb-4 bod">
+            <div class="card-header text-white">
+                <i class="fas fa-book me-1"></i>
+                Upcoming Assessments
+            </div>
+            <div class="card-body">
+                <strong>Assessment Venue: </strong>@ViewData["AssVenue"]<hr />
+                <strong>Assessment Date: </strong>@ViewData["AssDate"]<hr />
+                <strong>Assessment Time: </strong>@ViewData["AssTime"]<hr />
+                <strong>Assessment Type: </strong>@ViewData["AssType"]<hr />
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card mb-4 bod">
+            <div class="card-header text-white">
+                <i class="fas fa-message me-1"></i>
+                My Messages
+            </div>
+            <div class="card-body">
+                <strong>Message: </strong>@ViewData["Messages"]<hr />
+                <strong>Subject: </strong>@ViewData["Subject"]<hr />
+                <strong>Sent On: </strong>@ViewData["Date"]<hr />
+                <strong>Sent By: </strong>@ViewData["By"]<hr />
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="card mb-4 bod">
+            <div class="card-header text-white">
+                <i class="fas fa-chart-bar me-1"></i>
+                My Attendance
+            </div>
+            <div class="card-body">
+                <strong>Days Absent: </strong>@ViewData["Absent"]<hr />
+                <strong>From: </strong>@ViewData["From"]<hr />
+                <strong>Up Until: </strong>@ViewData["Till"]<hr />
+                <strong>Teacher Comment: </strong>@ViewData["Comment"]<hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="card mb-4 bod">
+            <div class="card-header text-white">
+                <i class="fas fa-chart-bar me-1"></i>
+                My Timetable
+            </div>
+            <div class="card-body">
+                <strong>Timetable: </strong>@ViewData["tTitle"]<hr />
+                <strong>Added By: </strong>@ViewData["tCreate"]<hr />
+                <strong>Added On: </strong>@ViewData["tDate"]<hr />
+                 @foreach(var item in Model)
+                {
+                 <strong>Attachment: </strong> <a href="@Url.Action("AttachmentDownload","Timetable",new {filename = @item.Attachment})"> Download</a><hr/>
+                }
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">My Subjects</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <form asp-action="OnViewLearnerSubjects" asp-controller="Learner">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                             <div class="form-group col-md-6">
+                                <label class="control-label"></label>
+                                <input name="IDPassport" placeholder="Enter Learner ID/Passport" class="form-control" />
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel2">Authorization</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <form asp-action="OnBeginQuiz" asp-controller="Quiz">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                             <div class="form-group col-md-6">
+                                <label class="control-label"></label>
+                                <input name="RSAIDNumber" placeholder="Enter Learner ID/Passport" class="form-control" />
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

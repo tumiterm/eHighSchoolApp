@@ -1,0 +1,285 @@
+﻿@model SchoolApp.Models.Learner
+@using SchoolApp.eNums
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+        border-left: solid 5px darkblue;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .desc, .form-control {
+        border-left: solid 5px darkblue;
+    }
+
+    .card-header, .head {
+        background-color: darkblue;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+</style>
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Learner Enrollment Details
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa fa-user"></i> Learner Personal Details</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa fa-mobile"></i> Learner Contact Details</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fa fa-home"></i> Learner Address Details</button>
+                    </li>
+                </ul>
+                <hr class="text-primary" />
+                <form asp-action="OnLearnerEnrolled">
+                    <input asp-for="LearnerId" hidden />
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="form-group col-md-12">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label asp-for="Name" class="control-label"></label>
+                                        <input asp-for="Name" class="form-control" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+
+
+                                    <div class="form-group col-md-4 el">
+                                        <label asp-for="LastName" class="control-label"></label>
+                                        <input asp-for="LastName" class="form-control" />
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4 el">
+                                        <label asp-for="Gender" class="control-label"></label>
+                                        <select asp-for="Gender" class="form-control gender" asp-items="Html.GetEnumSelectList<eGender>()">
+                                            <option selected="selected" value="">Select Gender</option>
+                                        </select>
+                                        <span asp-validation-for="Gender" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-2 el">
+                                        <label asp-for="IsSaCitizen" class="control-label"></label>
+                                        <select asp-for="IsSaCitizen" class="form-control citizen" asp-items="Html.GetEnumSelectList<eCitizen>()">
+                                            <option selected="selected" value="">Select Option</option>
+                                        </select>
+                                        <span asp-validation-for="IsSaCitizen" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label asp-for="DateOfBirth" class="control-label"></label>
+                                        <input asp-for="DateOfBirth" class="form-control" />
+                                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label asp-for="RSAIDNumber" class="control-label"></label>
+                                        <input asp-for="RSAIDNumber" class="form-control rsa" />
+                                        <span asp-validation-for="RSAIDNumber" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label asp-for="PassportNumber" class="control-label"></label>
+                                        <input asp-for="PassportNumber" class="form-control Pass" />
+                                        <span asp-validation-for="PassportNumber" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-12 el">
+                                        <label asp-for="Nationality" class="control-label"></label>
+                                        <select asp-for="Nationality" class="form-control nationality" asp-items="Html.GetEnumSelectList<eNationality>()">
+                                            <option selected="selected" value="">Select Nationality</option>
+                                        </select>
+                                        <span asp-validation-for="Nationality" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
+                                    <label asp-for="Cellphone" class="control-label"></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">+27</span>
+                                        <input asp-for="Cellphone" class="form-control" placeholder="Cellphone Number" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6 cn">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">@@</span>
+                                        <input type="text" asp-for="Email" class="form-control" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label asp-for="AddressType" class="control-label"></label>
+                                    <select asp-for="AddressType" class="form-control addressType" asp-items="Html.GetEnumSelectList<eAddressType>()">
+                                        <option selected="AddressType" value="">Select Address Type</option>
+                                    </select>
+                                    <span asp-validation-for="AddressType" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-3 el">
+                                    <label asp-for="AddressLine1" class="control-label"></label>
+                                    <input asp-for="AddressLine1" class="form-control line1" />
+                                    <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-3 el">
+                                    <label asp-for="AddressLine2" class="control-label"></label>
+                                    <input asp-for="AddressLine2" class="form-control line2" />
+                                    <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-3 el">
+                                    <label asp-for="Province" class="control-label"></label>
+                                    <select asp-for="Province" class="form-control" asp-items="Html.GetEnumSelectList<eProvince>()">
+                                        <option selected="Province" value="">Select Province</option>
+                                    </select>
+                                    <span asp-validation-for="Province" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-3 el">
+                                    <label asp-for="Postal" class="control-label"></label>
+                                    <input asp-for="Postal" type="number" class="form-control" />
+                                    <span asp-validation-for="Postal" class="text-danger"></span>
+                                </div>
+                            </div><br />
+                            <button class="btn btn-outline-success"><i class="fa fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa fa-plus"></i> Add Parent</button>
+                            <button type="button" class="btn btn-danger float-end"><i class="fa fa-window-close"></i> Exit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Learner Guardian</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <form asp-action="AddLearnerParent" asp-controller="Parent">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+
+                            <input asp-for="LearnerId" hidden />
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">Learner Full Name</label>
+                                <input name="Name" class="form-control" placeholder="Enter full Name" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">Last Name</label>
+                                <input name="LastName" class="form-control" placeholder="Enter Last Name" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">Relationship</label>
+                                <select name="Relationship" class="form-control relationship" asp-items="Html.GetEnumSelectList<eRelationship>()">
+                                    <option selected="Relationship" value="">Select Relationship</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="control-label">ID / Passport</label>
+                                <input type="file" name="RSAID" class="form-control" placeholder="Upload ID/Passport" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Cellphone Number</label>
+                                <input name="Cellphone" required placeholder="Cellphone Number" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Telephone</label>
+                                <input name="Telephone" class="form-control" placeholder="Telephone" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Work Telephone</label>
+                                <input name="WorkNumber" placeholder="Work Telephone" class="form-control" />
+                            </div>
+
+                             <div class="form-group col-md-3">
+                                <label class="control-label">Email Address</label>
+                                <input name="Email" placeholder="Email" class="form-control" />
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.citizen,.gender,.nationality,.province').select2();
+    });
+</script>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,85 @@
+﻿@model SchoolApp.Models.User
+@using SchoolApp.eNums
+@{
+    ViewData["Title"] = "Modify User";
+}
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+</style>
+
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                User Details
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="OnModifyUser">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <input type="hidden" asp-for="Id" />
+
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="LastName" class="control-label"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Username" class="control-label"></label>
+                                <input asp-for="Username" class="form-control" />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                <label asp-for="Password" class="control-label"></label>
+                                @Html.TextBox("Password",ViewData["password"],new {@class="form-control"})
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                <label asp-for="ConfirmPassword" class="control-label"></label>
+                                @Html.TextBox("ConfirmPassword",ViewData["ConfirmPassword"],new {@class="form-control"})
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+
+                            <div class="alert alert-danger mt-2" role="alert">
+                                <div class="form-group">
+                                    <label asp-for="RoleManager" class="control-label"></label>
+                                    <select asp-for="RoleManager" class="form-control" asp-items="Html.GetEnumSelectList<eRole>()">
+                                        <option selected="selected" value="">Select User Role</option>
+                                    </select>
+                                    <span asp-validation-for="RoleManager" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <button type="submit" value="Save" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" class="btn btn-danger float-end"><i class="fa fa-window-close"></i> Exit</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

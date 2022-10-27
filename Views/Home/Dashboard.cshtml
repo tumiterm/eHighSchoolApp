@@ -1,0 +1,141 @@
+﻿<h4>Learner Dashboard</h4>
+       <div class="row">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body"><i class="fa fa-graduation-cap"></i> Learners</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa fa-folder"></i> Open</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body"><i class="fa fa-user"></i> Learner Guardians</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"><i class="fa fa-folder"></i> Open</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body"><i class="fa fa-file"></i> Educators</div>
+                                    
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#"><i class="fa fa-folder"></i> Open</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body"><i class="fa fa-user"></i> Users</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#"><i class="fa fa-folder"></i> Open</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-dark text-white mb-4">
+                                    <div class="card-body"><i class="fa fa-file"></i> Attendance</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#"><i class="fa fa-folder"></i> Open</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body"><i class="fa fa-school"></i> School Info</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#"><i class="fa fa-folder"></i> Open</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Student Details
+                                    </div>
+                                    <div class="card-body">
+                                        No Details Yet
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Student Enrollment Details
+                                    </div>
+                                      <div class="card-body">
+                                        No Details Yet
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+ <form asp-action="OnStudentSearchResults" asp-controller="LearnerAdministration">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ID or Passport Number Required!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">#ID</span>
+          <input type="text" name="StudNumber" maxlength="13" class="form-control" placeholder="Enter your ID number" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Enter</button>
+      </div>
+  
+    </div>
+  </div>
+  </form>
+</div>
+
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+ <form asp-action="AddLearnerTrainingDocs" asp-controller="LearnerTrainingAdministration">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel2">Student Number Required</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">#FIT</span>
+          <input type="text" name="StudNum" maxlength="13" class="form-control" placeholder="Enter your student number" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Enter</button>
+      </div>
+  
+    </div>
+  </div>
+  </form>
+</div>
+

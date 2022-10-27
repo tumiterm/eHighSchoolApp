@@ -1,0 +1,30 @@
+﻿@model SchoolApp.ViewModels.LearnerViewModel
+
+<style>
+    .card-header {
+        background-color: darkblue;
+    }
+</style>
+
+<div class="form-group">
+    <button class="btn btn-warning mb-1"><i class="fa fa-plus"></i> Add New Learner</button>
+    <a class="btn btn-secondary float-end" asp-action="LearnerBoard" asp-controller="Home"><i class="fa fa-dashboard"></i> My Dashboard</a>
+</div>
+
+<div class="alert alert-success" role="alert">
+   <strong> Congratulations, applicant successful enrolled</strong><hr />
+    <b>Details:</b> @ViewData["Details"]
+</div>
+
+<div class="card">
+    <div class="card-header text-white">
+        My Subjects Chosen
+    </div>
+    <ul class="list-group list-group-flush">
+        @foreach (var item in ViewData["Subjects"] as IEnumerable<SchoolApp.Models.Subject>)
+        {
+            <li class="list-group-item">@item.Subj</li>
+        }
+    </ul>
+</div>
+

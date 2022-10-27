@@ -1,0 +1,141 @@
+﻿ @model SchoolApp.Models.Meeting
+ @using SchoolApp.eNums
+
+@{
+    ViewData["Title"] = "Schedule Meeting";
+}
+
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+        border-left: solid 5px darkblue;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .desc, .form-control {
+        border-left: solid 5px darkblue;
+    }
+
+    .card-header, .head {
+        background-color: darkblue;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+</style>
+
+<div class="header1">
+    <div class="alert mb-1 alert-primary d-flex align-items-center" id="form1" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div class="el">
+            <strong>Schedule A Meeting</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <form asp-action="ScheduleMeeting" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col-md-9">
+                <label asp-for="Grade" class="control-label"></label>
+                <select asp-for="Grade" class="form-control grade" asp-items="Html.GetEnumSelectList<eGrade>()">
+                    <option selected="selected" value="">Select Grade For Meeting</option>
+                </select>
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+
+             <div class="form-group col-md-9">
+                <label asp-for="Venue" class="control-label"></label>
+                <select asp-for="Venue" class="form-control venue" asp-items="Html.GetEnumSelectList<eClass>()">
+                    <option selected="selected" value="">Select Venue For Meeting</option>
+                </select>
+                <span asp-validation-for="Venue" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+             <div class="form-group col-md-4">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-9">
+                <label asp-for="Urgency" class="control-label"></label>
+                <select asp-for="Urgency" class="form-control venue" asp-items="Html.GetEnumSelectList<eUrgency>()">
+                    <option selected="selected" value="">Select Meeting Urgency</option>
+                </select>
+                <span asp-validation-for="Urgency" class="text-danger"></span>
+            </div>
+
+             <div class="form-group col-md-9">
+                <label asp-for="Message" class="control-label"></label>
+                <textarea asp-for="Message"  class="form-control" text-wrap:normal" type="text" placeholder="Please add your message here"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+
+            <br />
+           <div class="form-group mt-2">
+               <button type="submit" class="btn btn-outline-success"><i class="fa fa-save"> </i> Save</button>
+               <button type="reset" class="btn btn-primary"><i class="fa fa-undo"> </i> Reset</button>
+
+           </div>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+
+    });
+</script>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<SchoolApp.Models.User>
+
+@{
+    ViewData["Title"] = "Registered Users";
+}
+
+<style>
+    a {
+        text-decoration: none;
+    }
+    thead{
+        background-color: darkblue;
+    }
+</style>
+
+<p>
+    <a asp-action="OnGetUsers" class="btn btn-outline-danger"><i class="fa fa-window-close"></i> Exit</a>
+</p>
+
+<div class="header1">
+    <div class="alert elHeader mb-1 alert-primary d-flex align-items-center" id="form1" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div class="el">
+            <strong>List of Registered Users</strong>
+        </div>
+    </div>
+</div>
+
+
+<table class="table mr-5 ml-5 table-striped" id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>
+               
+            </th>
+
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.RoleManager)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.LastLoginDate)
+            </th>
+            
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="OnModifyUser" asp-route-id="@item.Id">Open</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoleManager)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastLoginDate)
+                </td>
+
+                 <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="~/js/datatables-simple-demo.js"></script>

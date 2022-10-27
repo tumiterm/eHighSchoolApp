@@ -1,0 +1,101 @@
+﻿@model IEnumerable<SchoolApp.Models.Assessment>
+@{
+    ViewData["Title"] = "Assessment List";
+}
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    thead{
+        background-color: darkblue;
+    }
+</style>
+
+<p>
+    <a asp-action="ScheduleAssessment" class="btn btn-outline-info"><i class="fa fa-plus"></i> Create New Assessment</a>
+</p>
+
+<div class="header1">
+    <div class="alert elHeader mb-1 alert-primary d-flex align-items-center" id="form1" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div class="el">
+            <strong>List of All Assessments</strong>
+        </div>
+    </div>
+</div>
+
+
+<table class="table mr-5 ml-5 table-striped" id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>
+               
+            </th>
+
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Classroom)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.AssessmentDate)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.AssessmentTime)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.AssessmentType)
+            </th>
+             <th class="text-white">
+                @Html.DisplayNameFor(model => model.AssessmentStatus)
+            </th>
+
+            <th class="text-white">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="AssessmentAttempt" asp-route-LearnerId="@item.AssessmentId">Start</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Classroom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssessmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssessmentTime)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssessmentType)
+                </td>
+
+                 <td>
+                    @Html.DisplayFor(modelItem => item.AssessmentStatus)
+                </td>
+
+               
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="~/js/datatables-simple-demo.js"></script>

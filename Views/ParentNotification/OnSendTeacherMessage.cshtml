@@ -1,0 +1,159 @@
+﻿@model SchoolApp.Models.ParentMessage
+@using SchoolApp.eNums
+
+
+@{
+    ViewData["Title"] = "Send Notification";
+}
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+        border-left: solid 5px darkblue;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .desc, .form-control {
+        border-left: solid 5px darkblue;
+    }
+
+    .card-header, .head {
+        background-color: darkblue;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+</style>
+
+<div class="header1">
+    <div class="alert mb-1 alert-primary d-flex align-items-center" id="form1" role="alert" style="border-bottom-color:darkblue; border-bottom-width:3px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi el bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div class="el">
+            <strong>Send Message To Teacher</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <form asp-action="OnSendTeacherMessage" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="Learner" class="control-label"></label>
+            <input asp-for="Learner" class="form-control" placeholder="Rey Benz" />
+            <span asp-validation-for="Learner" class="text-danger"></span>
+        </div>
+        <div class="row">
+
+             <div class="form-group col-md-8">
+                <label asp-for="TeacherId" class="control-label"></label>
+                <select asp-for="TeacherId" class="form-control teacher" asp-items="@ViewBag.TeacherId">
+                    <option selected="selected" value="">Select Learner Teacher</option>
+                </select>
+                <span asp-validation-for="TeacherId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label asp-for="AttachmentType" class="control-label"></label>
+                <select asp-for="AttachmentType" class="form-control attType" asp-items="Html.GetEnumSelectList<eParentAttachment>()">
+                    <option selected="selected" value="">Select Attachment Type</option>
+                </select>
+                <span asp-validation-for="AttachmentType" class="text-danger"></span>
+            </div>
+
+          <div class="form-group col-md-8 attFile">
+            <label asp-for="AttachmentFile" class="control-label"></label>
+            <input asp-for="AttachmentFile" attFile class="form-control" />
+            <span asp-validation-for="AttachmentFile" class="text-danger"></span>
+        </div>
+
+            <div class="form-group col-md-8">
+                <label asp-for="MessageType" class="control-label"></label>
+                <select asp-for="MessageType" class="form-control type" asp-items="Html.GetEnumSelectList<eMessageType>()">
+                    <option selected="selected" value="">Select Message Type</option>
+                </select>
+                <span asp-validation-for="MessageType" class="text-danger"></span>
+            </div>
+             <div class="form-group col-md-10">
+            <label asp-for="Message" class="control-label"></label>
+            <textarea asp-for="Message" class="form-control" text-wrap:normal" type="text" placeholder="Please add your experience here"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+
+        </div><br />
+
+           <div class="form-group">
+               <button type="submit" class="btn btn-outline-success"><i class="fa fa-paper-plane"> </i> Send</button>
+               <button type="reset" class="btn btn-primary"><i class="fa fa-undo"> </i> Reset</button>
+               <button type="button" class="btn btn-outline-danger float-end"><i class="fa fa-window-close"> </i> Close</button>
+
+           </div>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.type,.attType,.teacher').select2();
+
+      $('.attFile').hide();
+
+           $('.attType').on('change', function () {
+            
+               var selectedItem = $(".attType").find('option:selected').text();
+
+               if(selectedItem == "None" || selectedItem=="Select Attachment Type"){
+                   $('.attFile').hide();
+               }else{
+                   $('.attFile').show();
+               }
+           });
+
+
+    });
+</script>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
